@@ -12,9 +12,16 @@ export default class FruitContainer extends Component {
     }
 
     handleFilterChange = (e) => {
+        // get the value from the event
+        const filterValue = e.target.value
+        // filter through the list held in state based on the input value
+        const filteredFruitList = this.props.fruits.filter(fruit => {
+            return fruit.includes(filterValue)
+        })
         // set state to control the input
         this.setState({
-            filterValue: e.target.value
+            fruitsToDisplay: filteredFruitList,
+            filterValue
         })
     }
 
