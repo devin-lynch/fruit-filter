@@ -5,20 +5,24 @@ export default class List extends Component {
         const fruits = this.props.fruits.map((fruit, i) => {
             return <li key={`fruit-${i}`}>{fruit}</li>
         })
-        const removed = this.props.removed.map((fruit, idx)=>{
-            return <li key={`removed-${idx}`}>{fruit}</li>
+        const removed = this.props.removed.map((fruit, i)=>{
+            return <li key={`removed-${i}`}>{fruit}</li>
           })
         return (
             <div>
                 <h3>Matching Fruits!</h3>
+
                 <ul>
                     {fruits}
                 </ul>
 
+
                 <h3>Removed Fruits!</h3>
+
                 <ul>
                     {removed}
                 </ul>
+
             </div>
         )
     }
