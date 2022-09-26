@@ -16,7 +16,7 @@ export default class FruitContainer extends Component {
         const filterValue = e.target.value
         // filter through the list held in state based on the input value
         const filteredFruitList = this.props.fruits.filter(fruit => {
-            return fruit.includes(filterValue)
+            return fruit.toLowerCase().includes(filterValue.toLowerCase())
         })
         // set state to control the input
         this.setState({
